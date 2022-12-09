@@ -36,9 +36,11 @@ public class IndexController {
 
       statement = connection.createStatement();
       String query = null;
+      
+      Book theBook = new Book(bookname, bookauthor);
 
       // Filter by book name
-      query = "SELECT * FROM Books WHERE name LIKE '%" + bookname + "%'";
+      query = "SELECT * FROM Books WHERE name LIKE '%" + theBook.name + "%'";
 
      //if (bookname != null) {
      //  // Filter by book name
