@@ -37,20 +37,23 @@ public class IndexController {
       statement = connection.createStatement();
       String query = null;
 
-      if (bookname != null) {
-        // Filter by book name
-        query = "SELECT * FROM Books WHERE name LIKE '%" + bookname + "%'";
-      } else if (bookauthor != null) {
-        // Filter by book author
-        query = "SELECT * FROM Books WHERE author LIKE '%" + bookauthor + "%'";
-      } else if (bookread != null) {
-        // Filter by if the book has been read or not
-        Integer read = bookread ? 1 : 0;
-        query = "SELECT * FROM Books WHERE read = '" + read.toString() + "'";
-      } else {
-        // All books
-        query = "SELECT * FROM Books";
-      }
+      // Filter by book name
+      query = "SELECT * FROM Books WHERE name LIKE '%" + bookname + "%'";
+
+     //if (bookname != null) {
+     //  // Filter by book name
+     //  query = "SELECT * FROM Books WHERE name LIKE '%" + bookname + "%'";
+     //} else if (bookauthor != null) {
+     //  // Filter by book author
+     //  query = "SELECT * FROM Books WHERE author LIKE '%" + bookauthor + "%'";
+     //} else if (bookread != null) {
+     //  // Filter by if the book has been read or not
+     //  Integer read = bookread ? 1 : 0;
+     //  query = "SELECT * FROM Books WHERE read = '" + read.toString() + "'";
+     //} else {
+     //  // All books
+     //  query = "SELECT * FROM Books";
+     //}
 
       ResultSet results = statement.executeQuery(query);
 
